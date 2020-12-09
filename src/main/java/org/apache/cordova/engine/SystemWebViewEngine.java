@@ -59,8 +59,8 @@ import java.lang.reflect.Method;
 public class SystemWebViewEngine implements CordovaWebViewEngine {
     public static final String TAG = "SystemWebViewEngine";
 
-    protected final SystemWebView webView;
-    protected final SystemCookieManager cookieManager;
+    protected SystemWebView webView;
+    protected SystemCookieManager cookieManager;
     protected CordovaPreferences preferences;
     protected CordovaBridge bridge;
     protected CordovaWebViewEngine.Client client;
@@ -215,19 +215,6 @@ public class SystemWebViewEngine implements CordovaWebViewEngine {
             }
         }
         // End CB-3360
-
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(Intent.ACTION_CONFIGURATION_CHANGED);
-        if (this.receiver == null) {
-            this.receiver = new BroadcastReceiver() {
-                @Override
-                public void onReceive(Context context, Intent intent) {
-                    settings.getUserAgentString();
-                }
-            };
-            webView.getContext().registerReceiver(this.receiver, intentFilter);
-        }
-        // end CB-1405
     }
 
     private void enableRemoteDebugging() {
@@ -319,6 +306,9 @@ public class SystemWebViewEngine implements CordovaWebViewEngine {
                 LOG.e(TAG, "Error unregistering configuration receiver: " + e.getMessage(), e);
             }
         }
+        webView = null;
+        parentWebView = null;
+        cookieManager = null;
     }
 
     @Override

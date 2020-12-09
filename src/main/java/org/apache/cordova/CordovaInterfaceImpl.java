@@ -88,7 +88,7 @@ public class CordovaInterfaceImpl implements CordovaInterface {
 
     @Override
     public Context getContext() {
-        return activity;
+        return activity.getApplicationContext();
     }
 
     @Override

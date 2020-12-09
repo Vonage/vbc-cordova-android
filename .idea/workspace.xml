@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58134c88-be18-49a4-90b5-1c59de4137ef" name="Default Changelist" comment="" />
+    <list default="true" id="58134c88-be18-49a4-90b5-1c59de4137ef" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/cordova/CordovaInterfaceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/cordova/CordovaInterfaceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +44,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -66,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607520630733</updated>
-      <workItem from="1607520632412" duration="1450000" />
+      <workItem from="1607520632412" duration="1708000" />
     </task>
     <servers />
   </component>
