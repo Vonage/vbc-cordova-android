@@ -101,7 +101,7 @@ public class CordovaWebViewImpl implements CordovaWebView {
         this.cordova = cordova;
         this.preferences = preferences;
         pluginManager = new PluginManager(this, this.cordova, pluginEntries);
-        resourceApi = new CordovaResourceApi(engine.getView().getContext(), pluginManager);
+        resourceApi = new CordovaResourceApi(engine.getView().getContext().getApplicationContext(), pluginManager);
         nativeToJsMessageQueue = new NativeToJsMessageQueue();
         nativeToJsMessageQueue.addBridgeMode(new NativeToJsMessageQueue.NoOpBridgeMode());
         nativeToJsMessageQueue.addBridgeMode(new NativeToJsMessageQueue.LoadUrlBridgeMode(engine, cordova));
@@ -355,7 +355,7 @@ public class CordovaWebViewImpl implements CordovaWebView {
     }
     @Override
     public Context getContext() {
-        return engine.getView().getContext();
+        return engine.getView().getContext().getApplicationContext();
     }
 
     private void sendJavascriptEvent(String event) {
