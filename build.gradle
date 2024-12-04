@@ -7,4 +7,5 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
     }
+    namespace 'com.apache.cordova'
 }
